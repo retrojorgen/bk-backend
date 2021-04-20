@@ -12,7 +12,6 @@ app.get("/", function (req, res) {
 
 // Uses real data
 app.post("/", function (req, res) {
-  console.log(req.body);
   res.send({ reisefradrag: calculatedDeduction(req.body) });
 });
 
