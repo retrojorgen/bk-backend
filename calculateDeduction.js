@@ -1,8 +1,8 @@
 /**
  * Asks for deduction data-object
  * {
- *  "arbeidsreiser": [{"km": number, "hours": number}],
- *  "besoeksreiser": [{"km": number, "hours": number}],
+ *  "arbeidsreiser": [{"km": number, "antall": number}],
+ *  "besoeksreiser": [{"km": number, "antall": number}],
  *  "utgifterBomFergeEtc": number"
  * }
  * @param {deductionData} deducationData
@@ -16,13 +16,13 @@ module.exports = ({ arbeidsreiser, besoeksreiser, utgifterBomFergeEtc }) => {
   const tollDeductionLimit = 3400;
   const deductible = 22000;
 
-  // calculate total hours
+  // calculate total distance
   let travelDistanceInKm =
     arbeidsreiser
-      .map((hours) => hours.antall * hours.km)
+      .map((distance) => distance.antall * distance.km)
       .reduce((acc, value) => acc + value) +
     besoeksreiser
-      .map((hours) => hours.antall * hours.km)
+      .map((distance) => distance.antall * distance.km)
       .reduce((acc, value) => acc + value);
 
   // max 75.000 km
