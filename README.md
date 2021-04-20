@@ -17,8 +17,8 @@ This web service responds to a post request as raw JSON in the following format:
 
 ```JSON
 {
- "arbeidsreiser": [{"km": number, "hours": number}],
- "besoeksreiser": [{"km": number, "hours": number}],
+ "arbeidsreiser": [{"km": number, "antall": number}],
+ "besoeksreiser": [{"km": number, "antall": number}],
  "utgifterBomFergeEtc": number"
 }
 ```
