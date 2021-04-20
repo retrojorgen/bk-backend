@@ -28,3 +28,8 @@ The calculated deduction will be returned as JSON in the following format:
 ```JSON
 { "reisefradrag": number }
 ```
+
+## How to run
+
+- Yarn (install dependencies)
+- Yarn dev (run with nodemon)

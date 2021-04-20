@@ -1,9 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const exampleData = require("./data.json");
 const calculatedDeduction = require("./calculateDeduction");
 
 let app = express();
 app.use(express.json()); // for parsing application/json
+
+app.use(cors());
 
 // Uses the dummy-data
 app.get("/", function (req, res) {
@@ -15,7 +18,5 @@ app.post("/", function (req, res) {
   res.send({ reisefradrag: calculatedDeduction(req.body) });
 });
 
-const port = process.env.port || 5000;
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+const port = process.env.PORT || 5000;
+http.listen(port);

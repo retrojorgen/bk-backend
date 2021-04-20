@@ -44,7 +44,10 @@ module.exports = ({ arbeidsreiser, besoeksreiser, utgifterBomFergeEtc }) => {
   const tollDeduction =
     utgifterBomFergeEtc >= tollDeductionLimit ? utgifterBomFergeEtc : 0;
 
-  return (
-    distanceWithin50kInNOK + distanceAbove50kInNok + tollDeduction - deductible
-  );
+  // calculated deduction
+  const calculatedDeduction =
+    distanceWithin50kInNOK + distanceAbove50kInNok + tollDeduction - deductible;
+
+  // Don't return a negative number :)
+  return calculatedDeduction > 0 ? calculatedDeduction : 0;
 };
