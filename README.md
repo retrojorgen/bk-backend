@@ -2,7 +2,7 @@
 
 ## Overview
 
-Provides one single endpoint to calculate how much you can claim in travel deduction between your home and workplace.
+Provides one single root endpoint to calculate how much you can claim in travel deduction between your home and workplace.
 
 ## API-request
 
